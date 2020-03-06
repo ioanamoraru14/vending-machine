@@ -20,6 +20,7 @@ module.exports.policies = {
     // '*': true,
 
     'auth/*': true,
+    'product/*': true,
     '*': 'isAuth'
 
 };
