@@ -34,5 +34,7 @@ Update `DATABASE_URL` with your details
 sails lift
 ```
 
+If you are trying to connect to a local database and you are not using SSL then go to config/datastores.js and set ssl: false
+
 **When using branch `websockets`:**  
 After you are connected, make a `PUT` request to `/socket` to update the `socket_id` of the user in database
