@@ -22,7 +22,9 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
   'POST /login' : { action: 'auth/login' },
   'POST /register' : { action: 'auth/register' },
-  'POST /generate-data-db': {action: 'product/generate'}
+  'POST /generate-db-data': {action: 'product/generate'},
+  'PUT /add-money': {action: 'transaction/add-money'},
+  'POST /buy': {action: 'transaction/buy'},
 
   /***************************************************************************
   *                                                                          *

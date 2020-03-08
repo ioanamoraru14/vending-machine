@@ -1,4 +1,9 @@
 module.exports = async function (req, res) {
+    await Product.destroy({})
+    await Machine.destroy({})
+
+    let machine = {'sold': 0}
+    await Machine.create(machine)
 
     let product = {
         'name': 'Avira Prime',

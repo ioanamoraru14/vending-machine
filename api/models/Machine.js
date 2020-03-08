@@ -7,13 +7,11 @@
 
 module.exports = {
 
-  tableName: 'products',
+  tableName: 'machines',
 
   attributes: {
 
-    name: { type: 'string', required: true },
-    price: { type: 'number', required: true },
-    stock: { type: 'number', required: true },
+    sold: { type: 'number', required: true },
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗

@@ -11,14 +11,12 @@ module.exports = {
 
   attributes: {
 
-    product_id: { type: 'number', required: true },
     payment_method: { type: 'number', required: true },
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
+    product: { model: "product", required: true }
   },
-
 };
 
