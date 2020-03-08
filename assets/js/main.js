@@ -59,14 +59,18 @@ Machine.prototype = {
 						api.post('buy', { product: item.id, payment_method: 1 }).then(() => {
 							this[self[i]][0].amount--
 							this.resetChange(this.money)
-							alert(`You bought: ${item.name}`)
+                            alert(`You bought: ${item.name}`)
+                            
+                            $(`#admin-product-${item.name.toLowerCase()}`).val(this[self[i]][0].amount)
 						})
 					} else if (this.money >= Number(item.price)) {
 						api.post('buy', { product: item.id, payment_method: 0 }).then(() => {
 							this[self[i]][0].amount--
 							let newAmount = this.money - Number(item.price)
 							this.resetChange(newAmount)
-							alert(`You bought: ${item.name}`)
+                            alert(`You bought: ${item.name}`)
+                            
+                            $(`#admin-product-${item.name.toLowerCase()}`).val(this[self[i]][0].amount)
 						})
 					} else {
 						alert(`You don't have enough money!`)
@@ -181,7 +185,7 @@ function createMachine() {
 		machine.setMoney(response.data.sold)
 
 		let products = response.data.products
-		for (product of products) {
+		for (let product of products) {
 			let item = new Item(product.id, product.name, product.stock, product.price, product.location)
 			$(`#admin-product-${product.name.toLowerCase()}`).val(product.stock)
 			items.push(item)
