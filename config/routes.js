@@ -25,6 +25,7 @@ module.exports.routes = {
   'POST /generate-db-data': {action: 'product/generate'},
   'PUT /add-money': {action: 'transaction/add-money'},
   'POST /buy': {action: 'transaction/buy'},
+  'GET /change': {action: 'transaction/change'},
 
   /***************************************************************************
   *                                                                          *
