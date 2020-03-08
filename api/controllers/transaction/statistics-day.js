@@ -23,11 +23,13 @@ module.exports = async function(req, res) {
 	let transactions = await Transaction.find().where({ "createdAt" : { ">": start.getTime() } });
 
 	for (item of transactions) {
-		let date = new Date(item.createdAt * 1000);
-		dd = String(last.getDate()).padStart(2, '0');
-		mm = String(last.getMonth() + 1).padStart(2, '0');
-		yyyy = last.getFullYear();
+		let date = new Date(item.createdAt / 1000 * 1000);
+		console.log(date)
+		dd = String(date.getDate()).padStart(2, '0');
+		mm = String(date.getMonth() + 1).padStart(2, '0');
+		yyyy = date.getFullYear();
 		date = dd +'/'+ mm +'/'+ yyyy;
+		console.log(date)
 		dict[date]++;
 	}
 
