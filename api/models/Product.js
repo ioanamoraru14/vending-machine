@@ -14,6 +14,7 @@ module.exports = {
     name: { type: 'string', required: true },
     price: { type: 'number', required: true },
     stock: { type: 'number', required: true },
+    location: { type: 'string', required: true}
 
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
