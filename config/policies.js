@@ -22,6 +22,4 @@ module.exports.policies = {
     'auth/*': true,
     'product/*': true,
     'transaction/*': true,
-    '*': 'isAuth'
-
 };
