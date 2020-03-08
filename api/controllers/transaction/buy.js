@@ -10,14 +10,16 @@ module.exports = async function (req, res) {
         return res.status(400).json({ message: 'The item is not in stock!' })
     }
 
-    var machine = await Machine.findOne({id: 1})
+    var machine = await Machine.find().limit(1)
+    machine = machine[0]
+    
     if (req.body.payment_method == 0 && machine.sold < product.price) {
         return res.status(400).json({ message: 'You do not have enough money!' })
     }
 
     if (req.body.payment_method == 0) {
         var data = {sold: machine.sold - product.price}
-        await Machine.update( { id :1 }).set(data)
+        await Machine.update( { id :machine.id }).set(data)
     }
 
     var new_stock = {stock: product.stock - 1}
