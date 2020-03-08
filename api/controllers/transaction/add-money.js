@@ -3,11 +3,12 @@
 // }
 
 module.exports = async function (req, res) {
-    var machine = await Machine.findOne({id: 1})
+    var machine = await Machine.find().limit(1)
+    machine = machine[0]
     
     req.body['sold'] += machine.sold 
 
-    await Machine.update( { id :1 }).set(req.body);
+    await Machine.update( { id : machine.id }).set(req.body);
 
     return res.ok() 
 };
